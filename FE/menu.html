@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-6.2.0-web/css/all.min.css">
+
+    <title>Document</title>
+
+</head>
+<body>
+    <style>
+
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+        .banner{
+            text-align: center;
+            background-color: #3A9558;
+            height:110px;
+        }
+        .dropt a:hover{
+            width:100%;
+            background-color: #9C1010;
+        }
+.conten{
+    width:300px;
+    background-color: #F2F1EB;
+    padding: 10px;
+    margin-bottom: 10px;
+    
+}
+.drop{
+    cursor: pointer;
+    display:none;
+}
+.dropt{
+    cursor: pointer;
+    display:none;
+}
+ .conten2 li:hover .drop{
+    display: block;
+ }
+ .conten3 li:hover .drop{
+    display: block;
+ }
+ .conten4 li:hover .drop{
+    display: block;
+ }
+ .nav ul li:hover .dropt{
+    display: block;
+ }
+ .nav ul{
+    display: flex;
+ justify-content: space-around;
+ background-color: #F2F1EB;
+ padding:5px
+ }
+ .nav{
+    position: relative;
+ }
+ .dropt{
+    line-height: 25px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color:rgb(255,255,255) ;
+    position:absolute;
+ }
+ .full-conten{
+    display: flex;
+ }
+ .img{
+    display: flex;
+ }
+ .info{
+  background-color: #f8f8f8;
+   line-height: 40px; 
+   margin-left: 70px;
+ }
+.info div{
+    width:40vw;
+    background-color: #9C1010;
+    color:#F2F1EB
+}
+ .conten-right{
+    padding-top: 2%;
+    padding-left: 4%;
+ }
+ .conten-right h2{
+    text-align: center;
+ }
+ 
+ footer {
+  background-color: #f8f8f8;
+  padding: 50px 0;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer h4 {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons li a {
+  color: #555;
+  display: block;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.social-icons li a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.image p{
+    text-align: center;
+    cursor: pointer;
+    line-height: 30px;
+}
+.info{
+    margin-left:70px;
+}
+    </style>
+<div class="banner"><img src="http://cucchannuoi.gov.vn/wp-content/uploads/2021/09/banner-cuc-chan-nuoi.png" alt=""></div>
+<div class="nav">
+
+    <ul>
+        <li><i class="fa-solid fa-clone"></i> Đơn vị hành chính  <i class="fa-solid fa-caret-down"></i>
+        <div class="dropt">
+            <a href="control-dvhc.html">Quản lý đơn vị hành chính cấp huyện</a><br>
+            <a href="control-dvhc.html">Tìm kiếm đơn vị hành chính cấp huyện</a><br>
+            <a href="control-dvhc.html">Quản lý đơn vị hành chính cấp xã</a><br>
+            <a href="control-dvhc.html">Tìm kiếm đơn vị hành chính cấp xã</a>
+        </div>
+    </li>
+        <li><i class="fa-solid fa-clone"></i> Quản lý người dùng  <i class="fa-solid fa-caret-down"></i>
+            <div class="dropt">
+                <a href="control.html">Tìm kiếm người dùng</a><br>
+                <a href="control.html">Quản lý trạng thái người dùng</a><br>
+                <a href="control.html">Phân quyền cho người dùng</a><br>
+               
+            </div>
+        </li>
+        <li><i class="fa-solid fa-clone"></i> Lịch sử  <i class="fa-solid fa-caret-down"></i>
+            <div class="dropt">
+                <a href="history.html">Quản lý lịch sử truy cập</a><br>
+                <a href="history.html">Tìm kiếm lịch sử truy cập</a><br>
+                <a href="history.html">Lịch sử tác động hệ thống</a><br>
+                <a href="history.html">tìm kiếm lịch sử tác động hệ thống</a>
+            </div>
+        </li>
+<li><i class="fa-solid fa-clone"></i> Báo cáo,thống kê  <i class="fa-solid fa-caret-down"></i>
+    <div class="dropt">
+        <a href="history.html">Thống kê người dùng</a><br>
+        <a href="history.html">Thống kê lịch sử</a><br>
+        <a href="history.html">Thống kê lịch sử tác động</a><br>
+        <a href="history.html">thống kê tổng hợp</a>
+    </div>
+</li></i>
+</ul>
+</div>
+<div class="full-conten">
+<div class="content">
+    <div class="banner-column">
+        <i class="fa-solid fa-house"></i>Trang chủ> Thông tin tài khoản
+    </div>
+    <div class="conten-column">
+        <div class="conten conten1">
+          CÁN BỘ QUẢN LÝ
+          <ul>
+            <li><a href="">Thông tin tài khoản</a></li>
+            <li> <a href="quenmk.html"> Quên mật khẩu</a></li>
+            <li><a href="dkmoi.html">Đổi mật khẩu</a></li>
+            <li><a href="index.html">Thoát đăng nhập</a></li>
+          </ul>  
+        </div>
+        <div class="conten conten2">
+          SẢN PHẨM XỬ LÝ CHẤT THẢI CHĂN NUÔI
+            <ul><li>  <i class="fa-solid fa-chevron-right"></i> Cơ sở sản xuất
+                <div class="drop drop2"><hr>
+                    <a href="">Quản lý cơ sở sản xuất</a><br><hr>
+                    <a href="">Tìm kiếm cơ sở sản xuất</a>
+                </div>
+                <hr>
+            </li>
+                <li><i class="fa-solid fa-chevron-right"></i>  Cơ sở khảo nghiệm
+                    <div class="drop drop3"><hr>
+                        <a href="">Quản lý cơ sở khảo nghiệm</a><br><hr>
+                        <a href="">Tìm kiếm cơ sở khảo nghiệm</a>
+                    </div>
+                    <hr>
+                </li>
+            </ul>
+        </div>
+        <div class="conten conten3">
+            CHĂN NUÔI,CHẾ BIẾN,THỊ TRƯỜNG
+            <ul><li>  <i class="fa-solid fa-chevron-right"></i> Cơ sở chăn nuôi
+                <div class="drop drop"><hr>
+                    <a href="">Quản lý cá nhân,tổ chức</a><br><hr>
+                    <a href="">Tìm kiếm cá nhân,tổ chức </a>
+                </div><hr></li>
+                <li>  <i class="fa-solid fa-chevron-right"></i>Hộ chăn nuôi nhỏ lẻ
+                    <div class="drop drop"><hr>
+                        <a href="control-f.html">Quản lý hộ chăn nuôi </a><br><hr>
+                        <a href="control-f.html">Tìm kiếm hộ chăn nuôi </a>
+                    </div><hr></li>
+                    <li>  <i class="fa-solid fa-chevron-right"></i>Tổ chức chứng nhận
+                        <div class="drop drop"><hr>
+                            <a href="">Quản lý tổ chức chứng nhận</a><br><hr>
+                            <a href="">Tìm kiếm tổ chức chứng nhận</a>
+                        </div>
+                        <hr></li>
+                        <li>  <i class="fa-solid fa-chevron-right"></i> Cơ sở chế biến
+                            <div class="drop drop"><hr>
+                                <a href="">Quản lý cơ sỏ chế biến</a><br><hr>
+                                <a href="">Tìm kiếm cơ sở chế biến</a>
+                            </div><hr></li>
+                            <li>  <i class="fa-solid fa-chevron-right"></i>Vùng chăn nuôi
+                                <div class="drop drop"><hr>
+                                    <a href="">Quản lý vùng chăn nuôi</a><br><hr>
+                                    <a href="">Tìm kiếm vùng chăn nuôi</a>
+                                </div></li></ul>
+        </div>
+    </div>
+<div class="conten conten4">
+    THÚ Y
+    <ul><li>  <i class="fa-solid fa-chevron-right"></i> Chi cục thú y
+        <div class="drop drop"><hr>
+            <a href="">Quản lý danh mục thú y</a><br><hr>
+            <a href="">Tìm kiếm thông tin chi cục thú ý </a>
+        </div><hr></li>
+        <li>  <i class="fa-solid fa-chevron-right"></i>Đại lý bán thuốc
+            <div class="drop drop"><hr>
+                <a href="">Quản lý danh mục đại lý bán thuốc</a><br><hr>
+                <a href="">Tìm kiếm thông tin đại lý bán thuốc</a>
+            </div><hr></li>
+            <li>  <i class="fa-solid fa-chevron-right"></i>Khu giam giữ,tiêu hủy
+                <div class="drop drop"><hr>
+                    <a href="">Quản lý </a><br><hr>
+                    <a href="">Tìm kiếm thông tin khu giam giữ</a>
+                </div>
+                <hr></li>
+                <li>  <i class="fa-solid fa-chevron-right"></i> Cơ sở giết mổ
+                    <div class="drop drop"><hr>
+                        <a href="">Quản lý cơ sỏ giết mổ</a><br><hr>
+                        <a href="">Tìm kiếm thông tin cơ sở giết mổ</a>
+                    </div><hr></li>
+                    </ul>
+</div>
+</div>
+<div class="conten-right">
+    <h2>THÔNG TIN CÁ NHÂN</h2>
+    <h4>CÁN BỘ QUẢN LÝ</h4>
+    <hr>
+<div class="img">
+<div class="image"><img src="data:image/jpeg;base64,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" alt="">
+   <p><a href=""> Giới thiệu</a></p>
+   <p><a href="">Tiểu sử công tác</a></p>
+   <p><a href="">Đơn vị công tác</a></p>
+   <p><a href="">Đánh giá từ đồng nghiệp</a></p></div>
+<div class="info"> 
+   <div> <h3>GIỚI THIỆU</h3></div>
+    <p><b>HỌ VÀ TÊN:</b>$$$</p>      <p><b>QUÊ QUÁN:$$$</b></p>
+
+    <p><b>CHỨC VỤ:</b>$$$</p>         <p><b>NĂM SINH:$$$</b></p>
+    <p><b>ĐỊA CHỈ NƠI LÀM VIỆC:</b>$$$</p>
+    <p><b>EMAIL:</b>$$$</p>
+    <div><h3>CẤP BẬC CÁN BỘ</h3></div>
+    <p>Cán bộ bậc 3</p>
+    <div><h3>CÁC CHỨC VỤ TỪNG ĐẢM NHẬN</h3></div>
+     Cán bộ quản lý
+</div></div>
+</div>
+
+
+  
+</div><footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4>Thông tin liên hệ</h4>
+          <p><i class="fa fa-map-marker"></i> Địa chỉ:số 1,ĐCV,Tạ Quang Bửu Center</p>
+          <p><i class="fa fa-phone"></i> Điện thoại: 0355666666</p>
+          <p><i class="fa fa-envelope"></i> Email: info@channuoi.com</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Về chúng tôi</h4>
+          <p>Hệ thống quản lý chăn nuôi</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Kết nối với chúng tôi</h4>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-telegram"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

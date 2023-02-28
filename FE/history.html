@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Thống kê truy cập</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+    }
+    
+    </style>
+	<header>
+		<h1>Thống kê truy cập</h1>
+		
+	</header>
+	<main>
+		<section>
+			<h2>Lịch sử truy cập</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Thời gian truy cập</th>
+						<th>Địa chỉ IP</th>
+						<th>URL</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>2023-02-20 10:00:00</td>
+						<td>192.168.0.1</td>
+						<td>/index.html</td>
+					</tr>
+					<tr>
+						<td>2023-02-20 11:00:00</td>
+						<td>192.168.0.2</td>
+						<td>/about.html</td>
+					</tr>
+					<tr>
+						<td>2023-02-20 12:00:00</td>
+						<td>192.168.0.3</td>
+						<td>/contact.html</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section>
+			<h2>Thống kê truy cập</h2>
+			<div id="chart"></div>
+		</section>
+		<section>
+			<h2>Quản lý người dùng</h2>
+			<form>
+				<label for="username">Tên người dùng:</label>
+				<input type="text" id="username" name="username">
+				<label for="password">Mật khẩu:</label>
+				<input type="password" id="password" name="password">
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email">
+				<input type="submit" value="Kiểm tra">
+			</form>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Thống kê truy cập</p>
+	</footer>
+</body>
+</html>

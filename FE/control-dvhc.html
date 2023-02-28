@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý đơn vị hành chính</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>body {
+        font-family: Arial, sans-serif;
+      }
+      
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+      
+      header h1 {
+        margin: 0;
+      }
+      
+      main {
+        margin: 20px;
+      }
+      
+      section {
+        margin-bottom: 20px;
+      }
+      
+      #search-section label,
+      #unit-list-section table th {
+        width: 120px;
+      }
+      
+      #search-section input,
+      #search-section select {
+        width: 200px;
+        margin-right: 20px;
+      }
+      
+      #search-section button {
+        margin-top: 10px;
+      }
+      
+      #unit-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      #unit-table td,
+      #unit-table th {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      
+      #unit-table th {
+        background-color: #f0f0f0;
+      }
+      
+      footer {
+        background-color: #f0f0f0;
+        text-align: center;
+        padding: 10px;
+        margin-top: 20px;
+      }
+      </style>
+  <header>
+    <h1>Administrative Units Management System</h1>
+  </header>
+  <main>
+    <section id="search-section">
+      <h2>Search Administrative Units</h2>
+      <form id="search-form">
+        <label for="search-name">Name:</label>
+        <input type="text" id="search-name" name="search-name" placeholder="Enter name...">
+        <label for="search-level">Level:</label>
+        <select id="search-level" name="search-level">
+          <option value="">All</option>
+          <option value="huyen">Huyện</option>
+          <option value="xa">Xã</option>
+        </select>
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+    </section>
+    <section id="unit-list-section">
+      <h2>Administrative Unit List</h2>
+      <table id="unit-table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12345</td>
+            <td>Huyện A</td>
+            <td>Huyện</td>
+          </tr>
+          <tr>
+            <td>67890</td>
+            <td>Xã B</td>
+            <td>Xã</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script>const searchForm = document.getElementById
+</script>
+</body>
+</html>

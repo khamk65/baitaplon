@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm kiếm và quản lý cơ sở chăn nuôi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>/* CSS cho trang web */
+        header {
+          background-color: #333;
+          color: #fff;
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        header h1 {
+          font-size: 32px;
+          margin: 0;
+        }
+        
+        nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+        }
+        
+        nav li {
+          margin-left: 20px;
+        }
+        
+        nav a {
+          color: #fff;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        
+        main {
+          padding: 20px;
+        }
+        
+        footer {
+          background-color: #333;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+        }
+        .search-container {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#search-input {
+  flex-grow: 1;
+  margin-right: 1rem;
+}
+
+#search-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: #3e8e41;
+}
+
+#results-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+#results-table th,
+#results-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#results-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+        </style>
+    <header>
+      <h1>Tìm kiếm và quản lý cơ sở chăn nuôi</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Tìm kiếm</a></li>
+          <li><a href="#">Thêm mới</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="search-container">
+  <input type="text" id="search-input" placeholder="Tìm kiếm theo tên, địa chỉ hoặc công suất...">
+  <button id="search-button">Tìm kiếm</button>
+</div>
+<table id="results-table">
+  <thead>
+    <tr>
+      <th>Tên</th>
+      <th>Địa chỉ</th>
+      <th>Công suất</th>
+    </tr>
+    <tr><th></th>
+        <th></th>
+        <th></th></tr>
+    <tr><th></th>
+            <th></th>
+            <th></th></tr>
+     <tr><th></th>
+   <th></th>
+   <th></th></tr>
+    <tr><th></th>
+    <th></th>
+      <th></th></tr>
+    <tr><th></th>
+     <th></th>
+    <th></th></tr>
+  </thead>
+  <tbody>
+    <!-- Dữ liệu kết quả tìm kiếm sẽ được thêm vào đây -->
+  </tbody>
+</table>
+
+    </main>
+    <footer>
+      <p> Tìm kiếm và quản lý cơ sở chăn nuôi</p>
+    </footer>
+  </body>
+</html>
