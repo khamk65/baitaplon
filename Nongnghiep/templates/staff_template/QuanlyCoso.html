@@ -1,0 +1,68 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}
+Quản lý cơ sở{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+
+           <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin chi tiết</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Tên cơ sở</th>
+                        <th>Loại cơ sở</th>
+                        <th>Người đứng đầu</th>
+                        <th>Loại sản phẩm</th>
+                        <th>Đại điểm</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for coso in cosos %}
+                    <tr>
+                      <td>{{ coso.id }}</td>
+                      <td>{{ coso.tencoso }}</td>
+                        <td>{{ coso.loaicoso_id.tencoso }}</td>
+                        <td>{{ coso.nguoidungdau }}</td>
+                        <td>{{ coso.tensanpham }}</td>
+                        <td>{{ coso.diadiem}}</td>
+                        <td>{{ coso.ngaybatdau}}</td>
+                        <td>{{ coso.ngayhethan}}</td>
+                      <td><a href="/Sua_co_so/{{ coso.id }}" class="btn btn-success">Sửa</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+

@@ -1,0 +1,85 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}
+Sửa thông tin cơ sở |  ID cơ sở : {{ coso.id }}
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Edit Course</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="{% url 'Luu_sua_co_so' %}" method="post">
+                  {% csrf_token %}
+                <div class="form-group">
+                    <label>Tên cơ sở </label>
+                    <input type="text" class="form-control" name="tencoso" value="{{ coso.tencoso }}">
+                    <input type="hidden"  name="coso_id"  value="{{ coso.id }}">
+
+                  </div>
+                  <div class="form-group">
+                    <label>Loai cơ sơ </label>
+                    <select class="form-control" name="loai">
+                        {% for loai in loais %}'
+                            <option value="{{ loai.id }}">{{loai.tencoso}}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Người đứng đầu</label>
+                    <input type="text" class="form-control" name="leader" placeholder="Điền tên người đứng đầu" value="{{ coso.nguoidungdau}}">
+                  </div>
+                    <div class="form-group">
+                    <label>Tên loại sản phẩm</label>
+                    <input type="text" class="form-control" name="sanpham" placeholder="Điền tên loại sản phẩm" value="{{coso.tensanpham}}">
+                  </div>
+                  <div class="form-group">
+                    <label>Địa điểm</label>
+                    <input type="text" class="form-control" name="diadiem" placeholder="Điền địa điểm" value="{{coso.diadiem}}">
+                  </div>
+                              <div class="form-group">
+                    <label>Ngày bắt đầu</label>
+                    <input type="date" class="form-control" name="startdate" placeholder="Enter Session End Year" value="{{coso.ngaybatdau|date:'Y-m-d'}}">
+                  </div>
+                   <div class="form-group">
+                    <label>Ngày kết thúc </label>
+                    <input type="date" class="form-control" name="enddate" placeholder="Enter Session End Year" value="{{coso.ngayhethan|date:'Y-m-d'}}">
+                  </div>
+                   <div class="form-group">
+                      {% if messages %}
+                        {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                        <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                        {% endif %}
+                        {% if message.tags == 'success' %}
+                        <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                        {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Save Course</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+
