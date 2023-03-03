@@ -8,11 +8,22 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from Nongnghiep.models import CustomUser, AdminHOD, Staffs, LoaiCoso, Coso, tochuccapphep, giayphep
+from Nongnghiep.models import CustomUser, AdminHOD, Staffs, LoaiCoso, Coso, tochuccapphep, giayphep, Vungchannuoi
 
 
 def admin_home(request):
-    return render(request, "hod_template/home_content.html")
+    staff_count = Staffs.objects.all().count()
+    admin_count = AdminHOD.objects.all().count()
+    tochuc_count = tochuccapphep.objects.all().count()
+    coso_count = Coso.objects.all().count()
+    vungchannuoi_count = Vungchannuoi.objects.all().count()
+    context = {
+        "staff_count": staff_count,
+        "admin_count": admin_count,
+        "coso_count": coso_count,
+        "vungchannuoi_count": vungchannuoi_count,
+        "tochuc_count": tochuc_count}
+    return render(request, "hod_template/home_content.html",context)
 
 def admin_profile(request):
     user=CustomUser.objects.get(id=request.user.id)
