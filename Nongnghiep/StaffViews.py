@@ -10,7 +10,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from Nongnghiep.models import Coso, CustomUser,Staffs, LoaiCoso, Chicucthuy
+from Nongnghiep.models import Coso, CustomUser,Staffs, LoaiCoso, Chicucthuy,Dailybanthuoc
 
 def staff_home(request):
     return render(request, "staff_template/staff_profile.html")
@@ -187,16 +187,16 @@ def luuthongtindailybanthuoc(request):
     if request.method!="POST":
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
-        leader_thuy = request.POST.get("nguoidungdaucosothuy")
-        Email_thuy = request.POST.get("Email")
-        diadiem_thuy= request.POST.get("diadiemthuy")
+        leader_thuoc = request.POST.get("nguoidungdaudailybanthuoc")
+        Email_thuoc = request.POST.get("Emaildailybanthuoc")
+        diadiem_thuoc= request.POST.get("diadiemdailybanthuoc")
         try:
-            coso= Chicucthuy()
-            coso.nguoidungdau =leader_thuy
+            coso= Dailybanthuoc()
+            coso.nguoidungdau =leader_thuoc
             print("1")
-            coso.diadiem=diadiem_thuy
+            coso.diadiem=diadiem_thuoc
             print("2")
-            coso.Email=Email_thuy  
+            coso.Email=Email_thuoc 
             print("3")
             coso.save()
             print("4")
@@ -206,23 +206,23 @@ def luuthongtindailybanthuoc(request):
             messages.error(request,"Nhập thông tin thất bại")
             return HttpResponseRedirect(reverse("Addthongtincosothuy"))
 def Quanlydailybanthuoc(request):
-    cosos=Chicucthuy.objects.all()
-    return render(request,"staff_template/Quanlychicucthuy.html",{"cosos":cosos})
-def suathongtindailybanthuoc(request, thuy_id):
-    coso=Chicucthuy.objects.get(id=thuy_id)
-    return render(request,"staff_template/.html",{"coso": coso})
+    cosos=Dailybanthuoc.objects.all()
+    return render(request,"staff_template/quanlydailybanthuoc.html",{"cosos":cosos})
+def suathongtindailybanthuoc(request, thuoc_id):
+    coso=Dailybanthuoc.objects.get(id=thuoc_id)
+    return render(request,"staff_template/suadailybanthuoc.html",{"coso": coso})
 def luusuathongtindailybanthuoc(request):
     if request.method!="POST":
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
-        leader_thuy = request.POST.get("nguoidungdaucosothuy")
-        Email_thuy = request.POST.get("Email")
-        diadiem_thuy= request.POST.get("diadiemthuy")
+        leader_thuoc = request.POST.get("nguoidungdaudailybanthuoc")
+        Email_thuoc = request.POST.get("Emaildailybanthuoc")
+        diadiem_thuoc= request.POST.get("diadiemdailybanthuoc")
         try:
-            coso = Chicucthuy.objects.get(id=thuy_id)
-            coso.nguoidungdau =leader_thuy
-            coso.diadiem=diadiem_thuy
-            coso.Email=Email_thuy
+            coso = Dailybanthuoc.objects.get(id=thuoc_id)
+            coso.nguoidungdau =leader_thuoc
+            coso.diadiem=diadiem_thuoc
+            coso.Email=Email_thuoc
             coso.save()
             messages.success(request,"Sửa thông tin thành công")
             return HttpResponseRedirect(reverse("suathongtinchicucthuy"))

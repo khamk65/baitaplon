@@ -1,6 +1,6 @@
 {% extends 'staff_template/base_template.html' %}
 {% block page_title %}
-Sửa thông tin đại lý bán thuốc|  ID cơ sở : {{ thuy.id }}
+Sửa thông tin đại lý bán thuốc|  ID cơ sở : {{ thuoc.id }}
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -15,7 +15,7 @@ Sửa thông tin đại lý bán thuốc|  ID cơ sở : {{ thuy.id }}
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{% url 'luusuathongtinchicucthuy' %}" method="post">
+              <form role="form" action="{% url 'luusuathongtindailybanthuoc' %}" method="post">
                   {% csrf_token %}
                 <div class="form-group">
                     <label>Người đứng đầu </label>

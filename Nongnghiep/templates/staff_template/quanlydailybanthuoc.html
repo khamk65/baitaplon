@@ -30,17 +30,17 @@ Quản lý đại lý bán thuốc{% endblock page_title %}
                     <tr>
                       <th>Người đứng đầu</th>
                       <th>Địa điểm</th>
-                        <th>Email</th>
-                        <th>Thao tác</th>
+                      <th>Email</th>
+                      <th>Thao tác</th>
                     </tr>
                   </thead>
                   <tbody>
                   {% for coso in cosos %}
                     <tr>
-                      <td>{{ coso.nguoidungdaucosothuy}}</td>
-                      <td>{{ coso.diadiemthuy}}</td>
-                        <td>{{ coso.Emailthuy}}</td>
-                      <td><a href="/suathongtinchicucthuy/{{ thuy.id }}" class="btn btn-success">Sửa</a></td>
+                      <td>{{ coso.nguoidungdaudailybanthuoc}}</td>
+                      <td>{{ coso.diadiemdailybanthuoc}}</td>
+                      <td>{{ coso.Emaildailybanthuoc}}</td>
+                      <td><a href="/suathongtindailybanthuoc/{{ thuoc.id }}" class="btn btn-success">Sửa</a></td>
                     </tr>
                   {% endfor %}
                   </tbody>

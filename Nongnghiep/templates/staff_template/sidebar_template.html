@@ -70,8 +70,35 @@
               </p>
             </a>
           </li>
-
-
+          <li class="nav-item">
+            {% url 'Quanlychicucthuy' as Quanlychicucthuy %}
+              {% url 'suathongtinchicucthuy' course_id=id as suathongtinchicucthuy %}
+            <a href="{% url 'Quanlychicucthuy' %}" class="nav-link {% if request.path == Quanlychicucthuy %} active {% endif %} {% if request.path == suathongtinchicucthuy %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Quản lý chi cục thú y
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'adddailybanthuoc' as adddailybanthuoc %}
+            <a href="{% url 'adddailybanthuoc' %}" class="nav-link {% if request.path == adddailybanthuoc %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Đại lý bán thuốc
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            {% url 'Quanlydailybanthuoc' as Quanlydailybanthuoc %}
+              {% url 'suathongtindailybanthuoc' course_id=id as suathongtindailybanthuoc %}
+            <a href="{% url 'Quanlydailybanthuoc' %}" class="nav-link {% if request.path == Quanlydailybanthuoc %} active {% endif %} {% if request.path == suathongtindailybanthuoc %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Quản lý đại lý bán thuốc
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
