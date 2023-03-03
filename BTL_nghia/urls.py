@@ -46,7 +46,9 @@ urlpatterns = [
     # thêm path cơ sở thú y
     path('Addthongtincosothuy',StaffViews.Addthongtincosothuy, name="Addthongtincosothuy"),
     path('Luuthongtincosothuy',StaffViews.Luuthongtincosothuy, name="Luuthongtincosothuy"),
- 
+    path('', StaffViews.QuanLyCoSo, name="Quan_ly_co_so"),
+    path('Sua_co_so/<str:coso_id>', StaffViews.Sua_co_so, name="Sua_co_so"),
+    path('Luu_sua_co_so', StaffViews.Luu_sua_co_so, name="Luu_sua_co_so"),
     
 
 ]

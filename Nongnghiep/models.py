@@ -76,9 +76,11 @@ class Chicucthuy(models.Model):
 
 class Dailybanthuoc(models.Model):
     id = models.AutoField(primary_key=True)
+    nguoidungdau=models.TextField()
     diadiem = models.TextField()
-    loaisanpham = models.TextField()
-    giayphep_id = models.ForeignKey(giayphep, on_delete=models.CASCADE)
+    Email = models.TextField()
+    objects=models.Manager()
+    
 
 @receiver(post_save, sender=CustomUser)
 def create_user_profile(sender, instance, created, **kwargs):
