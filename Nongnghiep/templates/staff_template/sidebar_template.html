@@ -61,7 +61,15 @@
               </p>
             </a>
           </li>
-
+          <li class="nav-item">
+            {% url 'Addthongtincosothuy' as Addthongtincosothuy %}
+            <a href="{% url 'Addthongtincosothuy' %}" class="nav-link {% if request.path == Addthongtincosothuy %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Cơ sở thúy y
+              </p>
+            </a>
+          </li>
 
 
         </ul>

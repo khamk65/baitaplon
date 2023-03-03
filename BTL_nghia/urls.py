@@ -21,6 +21,7 @@ urlpatterns = [
     path('get_user_details', views.GetUserDetails),
     path('logout_user', views.logout_user, name="logout"),
     path('doLogin', views.doLogin, name="do_login"),
+   
     path('admin_home', AdminViews.admin_home, name="admin_home"),
     path('admin_profile', AdminViews.admin_profile, name="admin_profile"),
     path('admin_profile_save', AdminViews.admin_profile_save, name="admin_profile_save"),
@@ -31,7 +32,7 @@ urlpatterns = [
     path('manage_staff', AdminViews.manage_staff, name="manage_staff"),
     path('edit_staff/<str:staff_id>', AdminViews.edit_staff, name="edit_staff"),
     path('edit_staff_save', AdminViews.edit_staff_save, name="edit_staff_save"),
-
+    
     path('staff_home', StaffViews.staff_home, name="staff_home"),
     path('staff_profile', StaffViews.staff_profile, name="staff_profile"),
     path('staff_profile_save', StaffViews.staff_profile_save, name="staff_profile_save"),
@@ -42,4 +43,10 @@ urlpatterns = [
     path('Quan_ly_co_so', StaffViews.QuanLyCoSo, name="Quan_ly_co_so"),
     path('Sua_co_so/<str:coso_id>', StaffViews.Sua_co_so, name="Sua_co_so"),
     path('Luu_sua_co_so', StaffViews.Luu_sua_co_so, name="Luu_sua_co_so"),
+    # thêm path cơ sở thú y
+    path('Addthongtincosothuy',StaffViews.Addthongtincosothuy, name="Addthongtincosothuy"),
+    path('Luuthongtincosothuy',StaffViews.Luuthongtincosothuy, name="Luuthongtincosothuy"),
+ 
+    
+
 ]

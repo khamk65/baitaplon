@@ -10,7 +10,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from Nongnghiep.models import Coso, CustomUser,Staffs, LoaiCoso
+from Nongnghiep.models import Coso, CustomUser,Staffs, LoaiCoso, Chicucthuy
 
 def staff_home(request):
     return render(request, "staff_template/staff_profile.html")
@@ -131,3 +131,28 @@ def Luu_sua_co_so(request):
         except:
             messages.error(request,"Sửa thông tin thất bại")
             return HttpResponseRedirect(reverse("Sua_co_so",kwargs={"coso_id":coso_id}))
+# hàm thêm thông tin cơ sở thu y
+def Addthongtincosothuy(request):
+    return render(request,"staff_template/addchicucthuy.html")
+def Luuthongtincosothuy(request):
+    if request.method!="POST":
+        return HttpResponse("<h2>Method Not Allowed</h2>")
+    else:
+        leader_thuy = request.POST.get("nguoidungdaucosothuy")
+        Email_thuy = request.POST.get("Email")
+        diadiem_thuy= request.POST.get("diadiemthuy")
+        try:
+            coso= Chicucthuy()
+            coso.nguoidungdau =leader_thuy
+            print("1")
+            coso.Email=Email_thuy
+            print("2")
+            coso.diadiem=diadiem_thuy
+            print("3")
+            coso.save()
+            print("4")
+            messages.success(request,"Nhập thông tin thành công")
+            return HttpResponseRedirect(reverse("Addthongtincosothuy"))
+        except:
+            messages.error(request,"Nhập thông tin thất bại")
+            return HttpResponseRedirect(reverse("Addthongtincosothuy"))
