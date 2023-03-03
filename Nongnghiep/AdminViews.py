@@ -8,7 +8,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from Nongnghiep.models import CustomUser, AdminHOD, Staffs, LoaiCoso, Coso
+from Nongnghiep.models import CustomUser, AdminHOD, Staffs, LoaiCoso, Coso, tochuccapphep, giayphep
 
 
 def admin_home(request):
@@ -114,3 +114,47 @@ def edit_staff_save(request):
         except:
             messages.error(request,"Failed to Edit Staff")
             return HttpResponseRedirect(reverse("edit_staff",kwargs={"staff_id":staff_id}))
+
+def QuanLyToChucCapPhep(request):
+    staffs = Staffs.objects.all()
+    return render(request, "hod_template/QuanLyToChucCapPhep.html", {"staffs": staffs})
+
+def LuuToChucCapPhep(request):
+    if request.method != "POST":
+        return HttpResponse("<h2>Method Not Allowed</h2>")
+    else:
+        diadiem = request.POST.get("diadiem")
+        leader = Staffs.objects.get(id=request.POST.get("leader"))
+        try:
+            tochuc = tochuccapphep()
+            tochuc.diadiem = diadiem
+            tochuc.nguoidungdau = leader
+            tochuc.save()
+            messages.success(request, "Thêm thông tin thành công")
+            return HttpResponseRedirect(reverse("Quan_ly_to_chuc_cap_phep"))
+        except:
+            messages.error(request, "Thêm thông tin thất bại")
+            return HttpResponseRedirect(reverse("Quan_ly_to_chuc_cap_phep"))
+
+def QuanLyGiayPhep(request):
+    tochucs = tochuccapphep.objects.all()
+    return render(request, "hod_template/QuanLyGiayPhep.html", {"tochucs":tochucs})
+
+def LuuGiayPhep(request):
+    if request.method != "POST":
+        return HttpResponse("<h2>Method Not Allowed</h2>")
+    else:
+        startday = request.POST.get("startday")
+        endday = request.POST.get("endday")
+        tochuc = tochuccapphep.objects.get(id=request.POST.get("tochuc"))
+        try:
+            giayphep_ = giayphep()
+            giayphep_.ngaybatdau = startday
+            giayphep_.ngayhethan = endday
+            giayphep_.tochuccapphep_id = tochuc
+            giayphep_.save()
+            messages.success(request, "Thêm thông tin thành công")
+            return HttpResponseRedirect(reverse("Quan_ly_giay_phep"))
+        except:
+            messages.error(request, "Thêm thông tin thất bại")
+            return HttpResponseRedirect(reverse("Quan_ly_giay_phep"))

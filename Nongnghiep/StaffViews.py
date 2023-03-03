@@ -10,7 +10,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from Nongnghiep.models import Coso, CustomUser,Staffs, LoaiCoso
+from Nongnghiep.models import Coso, CustomUser,Staffs, LoaiCoso, giayphep, Vungchannuoi
 
 def staff_home(request):
     return render(request, "staff_template/staff_profile.html")
@@ -45,7 +45,7 @@ def staff_profile_save(request):
             return HttpResponseRedirect(reverse("staff_profile"))
 
 def Them_loai_co_so(request):
-    return render(request,"staff_template/add_subject_template.html")
+    return render(request, "staff_template/Quan_ly_loai_co_so.html")
 
 def Luu_them_thong_tin_loai_co_so(request):
     if request.method!="POST":
@@ -89,8 +89,7 @@ def Luu_co_so(request):
             coso.save()
             messages.success(request,"Thêm thành công")
             return HttpResponseRedirect(reverse("Them_co_so"))
-        except Exception as e:
-            print(e)
+        except:
             messages.error(request,"Thêm thất bại")
             return HttpResponseRedirect(reverse("Them_co_so"))
 
@@ -131,3 +130,63 @@ def Luu_sua_co_so(request):
         except:
             messages.error(request,"Sửa thông tin thất bại")
             return HttpResponseRedirect(reverse("Sua_co_so",kwargs={"coso_id":coso_id}))
+
+
+def ThemVungChanNuoi(request):
+    staffs = Staffs.objects.all()
+    giaypheps = giayphep.objects.all()
+    return render(request, "staff_template/ThemVungChanNuoi.html",{"staffs": staffs, "giaypheps": giaypheps})
+
+def LuuVungChanNuoi(request):
+    if request.method != "POST":
+        return HttpResponse("<h2>Method Not Allowed</h2>")
+    else:
+        Diachi = request.POST.get("Diachi")
+        leader = Staffs.objects.get(id=request.POST.get("leader"))
+        dieukien = request.POST.get("dieukien")
+        giayphep_ = giayphep.objects.get(id=request.POST.get("giayphep"))
+        try:
+            vungchannuoi = Vungchannuoi()
+            vungchannuoi.diadiem = Diachi
+            vungchannuoi.nguoiquanly= leader
+            vungchannuoi.dieukienchannuoi= dieukien
+            vungchannuoi.giayphep_id=giayphep_
+            vungchannuoi.save()
+            messages.success(request, "Thêm thông tin thành công")
+            return HttpResponseRedirect(reverse("Them_vung_chan_nuoi"))
+        except:
+            messages.error(request, "Thêm thông tin thất bại")
+            return HttpResponseRedirect(reverse("Them_vung_chan_nuoi"))
+
+def QuanLyVungChanNuoi(request):
+    vungchannuoi = Vungchannuoi.objects.all()
+    return render(request,"staff_template/QuanLyVungChanNuoi.html",{"vungs": vungchannuoi})
+
+def SuaVungChanNuoi(request, vung_id):
+    vungchannuoi = Vungchannuoi.objects.get(id=vung_id)
+    staffs = Staffs.objects.all()
+    giaypheps = giayphep.objects.all()
+    return render(request,"staff_template/SuaVungChanNuoi.html", {"vung": vungchannuoi, "staffs": staffs, "giaypheps": giaypheps})
+
+def Luu_Sua_Vung_Chan_Chan_Nuoi(request):
+    if request.method != "POST":
+        return HttpResponse("<h2>Method Not Allowed</h2>")
+    else:
+        vung_id = request.POST.get("vung_id")
+        print(type(vung_id))
+        Diachi = request.POST.get("Diachi")
+        leader = Staffs.objects.get(id=request.POST.get("leader"))
+        dieukien = request.POST.get("dieukien")
+        giayphep_ = giayphep.objects.get(id=request.POST.get("giayphep"))
+        try:
+            vungchannuoi = Vungchannuoi(id = vung_id)
+            vungchannuoi.diadiem = Diachi
+            vungchannuoi.nguoiquanly= leader
+            vungchannuoi.dieukienchannuoi= dieukien
+            vungchannuoi.giayphep_id=giayphep_
+            vungchannuoi.save()
+            messages.success(request, "Thêm thông tin thành công")
+            return HttpResponseRedirect(reverse("Sua_vung_chan_nuoi", kwargs={"vung_id": vung_id}))
+        except:
+            messages.error(request, "Thêm thông tin thất bại")
+            return HttpResponseRedirect(reverse("Sua_vung_chan_nuoi", kwargs={"vung_id": vung_id}))
