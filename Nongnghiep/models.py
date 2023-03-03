@@ -71,10 +71,10 @@ class Vungchannuoi(models.Model):
 
 class Chicucthuy(models.Model):
     id = models.AutoField(primary_key=True)
-    nguoidungdau = models.ForeignKey(Staffs, on_delete=models.CASCADE)
+    nguoidungdau=models.TextField()
     diadiem = models.TextField()
-    Email = models.EmailField()
-    objects = models.Manager()
+    Email = models.TextField()
+    objects=models.Manager()
 
 class Dailybanthuoc(models.Model):
     id = models.AutoField(primary_key=True)

@@ -1,0 +1,58 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}
+Quản lý chi cục thú y{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+
+           <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin chi tiết</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>Người đứng đầu</th>
+                      <th>Địa điểm</th>
+                        <th>Email</th>
+                        <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for coso in cosos %}
+                    <tr>
+                      <td>{{ coso.nguoidungdaucosothuy}}</td>
+                      <td>{{ coso.diadiemthuy}}</td>
+                        <td>{{ coso.Emailthuy}}</td>
+                      <td><a href="/suathongtinchicucthuy/{{ thuy.id }}" class="btn btn-success">Sửa</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+

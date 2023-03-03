@@ -21,6 +21,7 @@ urlpatterns = [
     path('get_user_details', views.GetUserDetails),
     path('logout_user', views.logout_user, name="logout"),
     path('doLogin', views.doLogin, name="do_login"),
+   
     path('admin_home', AdminViews.admin_home, name="admin_home"),
     path('admin_profile', AdminViews.admin_profile, name="admin_profile"),
     path('admin_profile_save', AdminViews.admin_profile_save, name="admin_profile_save"),
@@ -45,7 +46,9 @@ urlpatterns = [
     path('luu_co_so/', StaffViews.Luu_co_so,name="Luu_co_so"),
     path('Quan_ly_co_so', StaffViews.QuanLyCoSo, name="Quan_ly_co_so"),
     path('Sua_co_so/<str:coso_id>', StaffViews.Sua_co_so, name="Sua_co_so"),
-    path('Luu_sua_co_so', StaffViews.Luu_sua_co_so, name="Luu_sua_co_so"),
+    path('Luu_sua_co_so', StaffViews.Luu_sua_co_so, name="Luu_sua_co_so),
+    path('Addthongtincosothuy',StaffViews.Addthongtincosothuy, name="Addthongtincosothuy"),
+    path('Luuthongtincosothuy',StaffViews.Luuthongtincosothuy, name="Luuthongtincosothuy"),
     path('Them_vung_chan_nuoi', StaffViews.ThemVungChanNuoi, name="Them_vung_chan_nuoi"),
     path('Luu_vung_chan_nuoi', StaffViews.LuuVungChanNuoi, name="Luu_vung_chan_nuoi"),
     path('Quan_ly_vung_chan_nuoi', StaffViews.QuanLyVungChanNuoi, name="Quan_vung_chan_nuoi"),
