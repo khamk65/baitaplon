@@ -1,0 +1,81 @@
+{% extends 'staff_template/base_template.html' %}
+{% block page_title %}
+Thêm Vùng Chăn Nuôi
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Thêm Vùng Chăn Nuôi</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form role="form" action="Luu_vung_chan_nuoi" method="post">
+                  {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Địa chỉ</label>
+                    <input type="text" class="form-control" name="Diachi" placeholder="Điền địa chỉ vùng chăn nuôi">
+                  </div>
+                  <div class="form-group">
+                    <label>Người quản lý</label>
+                    <select class="form-control" name="leader">
+                        {% for staff in staffs %}'
+                            <option value="{{ staff.id }}">{{staff.admin.last_name}} {{ staff.admin.first_name }}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Điều kiện chăn nuôi</label>
+                    <select class="form-control" name="dieukien">
+                        <option value="True">"Đủ điều kiện chăn nuôi"</option>
+                        <option value="False">"Không đủ điều kiện chăn nuôi"</option>
+                    </select>
+                  </div>
+
+                <div class="form-group">
+                    <label>Giay phep</label>
+                    <select class="form-control" name="giayphep">
+                        {% for giayphep in giaypheps %}'
+                            <option value="{{ giayphep.id }}">{{ giayphep.ngaybatdau }} to {{ giayphep.ngayhethan }}</option>
+                        {% endfor %}
+                    </select>
+                  </div>
+
+                   <div class="form-group">
+                      {% if messages %}
+                        {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                        <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                        {% endif %}
+                        {% if message.tags == 'success' %}
+                        <div class="alert alert-success" style="margin-top:10px">{{ message }}</div>
+                        {% endif %}
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Add Course</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+

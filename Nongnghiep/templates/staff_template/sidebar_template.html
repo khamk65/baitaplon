@@ -61,6 +61,7 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
             {% url 'Addthongtincosothuy' as Addthongtincosothuy %}
             <a href="{% url 'Addthongtincosothuy' %}" class="nav-link {% if request.path == Addthongtincosothuy %} active {% endif %}">
@@ -70,6 +71,30 @@
               </p>
             </a>
           </li>
+          
+         <li class="nav-item">
+            {% url 'Them_vung_chan_nuoi' as Them_vung_chan_nuoi %}
+            <a href="{% url 'Them_vung_chan_nuoi' %}" class="nav-link {% if request.path == Them_vung_chan_nuoi %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                    Thêm vùng chăn nuôi
+              </p>
+            </a>
+          </li>
+
+        <li class="nav-item">
+            {% url 'Quan_vung_chan_nuoi' as Quan_vung_chan_nuoi %}
+            <a href="{% url 'Quan_vung_chan_nuoi' %}" class="nav-link {% if request.path == Quan_vung_chan_nuoi %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                    Quản lý vùng chăn nuôi
+              </p>
+            </a>
+          </li>
+
+
+
+
 
 
         </ul>

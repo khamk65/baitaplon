@@ -58,6 +58,7 @@ class giayphep(models.Model):
     ngaybatdau= models.DateTimeField()
     ngayhethan = models.DateTimeField()
     tochuccapphep_id = models.ForeignKey(tochuccapphep, on_delete=models.CASCADE)
+    objects = models.Manager()
 
 
 class Vungchannuoi(models.Model):
@@ -66,6 +67,7 @@ class Vungchannuoi(models.Model):
     nguoiquanly = models.ForeignKey(Staffs, on_delete=models.CASCADE)
     dieukienchannuoi = models.BooleanField(default=False)
     giayphep_id = models.ForeignKey(giayphep, on_delete=models.CASCADE)
+    objects = models.Manager()
 
 class Chicucthuy(models.Model):
     id = models.AutoField(primary_key=True)
@@ -79,6 +81,7 @@ class Dailybanthuoc(models.Model):
     diadiem = models.TextField()
     loaisanpham = models.TextField()
     giayphep_id = models.ForeignKey(giayphep, on_delete=models.CASCADE)
+    objects = models.Manager()
 
 @receiver(post_save, sender=CustomUser)
 def create_user_profile(sender, instance, created, **kwargs):
