@@ -139,7 +139,7 @@ def Luuthongtincosothuy(request):
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
         leader_thuy = request.POST.get("nguoidungdaucosothuy")
-        Email_thuy = request.POST.get("Email")
+        Email_thuy = request.POST.get("Emailthuy")
         diadiem_thuy= request.POST.get("diadiemthuy")
         try:
             coso= Chicucthuy()
@@ -161,13 +161,14 @@ def Quanlychicucthuy(request):
     return render(request,"staff_template/Quanlychicucthuy.html",{"cosos":cosos})
 def suathongtinchicucthuy(request, thuy_id):
     coso=Chicucthuy.objects.get(id=thuy_id)
-    return render(request,"staff_template/.html",{"coso": coso})
+    return render(request,"staff_template/suathongtinchicucthuy.html",{"coso": coso})
 def luusuathongtinchicucthuy(request):
     if request.method!="POST":
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
+        thuy_id = request.POST.get("thuy_id")
         leader_thuy = request.POST.get("nguoidungdaucosothuy")
-        Email_thuy = request.POST.get("Email")
+        Email_thuy = request.POST.get("Emailthuy")
         diadiem_thuy= request.POST.get("diadiemthuy")
         try:
             coso = Chicucthuy.objects.get(id=thuy_id)

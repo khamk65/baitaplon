@@ -37,10 +37,10 @@ Quản lý đại lý bán thuốc{% endblock page_title %}
                   <tbody>
                   {% for coso in cosos %}
                     <tr>
-                      <td>{{ coso.nguoidungdaudailybanthuoc}}</td>
-                      <td>{{ coso.diadiemdailybanthuoc}}</td>
-                      <td>{{ coso.Emaildailybanthuoc}}</td>
-                      <td><a href="/suathongtindailybanthuoc/{{ thuoc.id }}" class="btn btn-success">Sửa</a></td>
+                      <td>{{ coso.nguoidungdau}}</td>
+                      <td>{{ coso.diadiem}}</td>
+                      <td>{{ coso.Email}}</td>
+                      <td><a href="/suathongtindailybanthuoc/{{coso.id }}" class="btn btn-success">Sửa</a></td>
                     </tr>
                   {% endfor %}
                   </tbody>
