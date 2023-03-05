@@ -1,6 +1,6 @@
 {% extends 'staff_template/base_template.html' %}
 {% block page_title %}
-Edit Profile
+Sửa thông tin
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -11,7 +11,7 @@ Edit Profile
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Edit Profile</h3>
+                <h3 class="card-title">Sửa thông tin</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -22,25 +22,22 @@ Edit Profile
                     <label>Username</label>
                     <input type="text" class="form-control" name="username" value="{{ user.username }}" disabled="disabled">
                   </div>
-                  <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" class="form-control" name="username" value="{{ user.email }}" disabled="disabled">
-                  </div>
+                
                    <div class="form-group">
-                    <label>First Name</label>
+                    <label>Họ</label>
                     <input type="text" class="form-control" name="first_name" value="{{ user.first_name }}">
                   </div>
                   <div class="form-group">
-                    <label>Last Name</label>
+                    <label>Tên</label>
                     <input type="text" class="form-control" name="last_name" value="{{ user.last_name }}">
                   </div>
                    <div class="form-group">
-                    <label>Address</label>
+                    <label>Địa chỉ</label>
                     <input type="text" class="form-control" name="address" value="{{ staff.address }}">
                   </div>
                    <div class="form-group">
-                    <label>Change Password?</label>
-                    <input type="text" class="form-control" name="password" placeholder="Fill Only If You want to Change Password">
+                    <label>Thay đổi mật khẩu?</label>
+                    <input type="text" class="form-control" name="password" placeholder="Nhập mật khẩu mới,nếu bạn muốn đổi mật khẩu">
                   </div>
                    <div class="form-group">
                       {% if messages %}
@@ -59,7 +56,7 @@ Edit Profile
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block">Save Profile</button>
+                  <button type="submit" class="btn btn-primary btn-block">Lưu</button>
                 </div>
               </form>
             </div>
