@@ -77,7 +77,7 @@ class Chicucthuy(models.Model):
     objects=models.Manager()
 
 class Dailybanthuoc(models.Model):
-     id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nguoidungdau=models.TextField()
     diadiem = models.TextField()
     Email = models.TextField()
