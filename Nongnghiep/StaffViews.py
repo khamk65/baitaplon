@@ -139,7 +139,7 @@ def Luuthongtincosothuy(request):
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
         leader_thuy = request.POST.get("nguoidungdaucosothuy")
-        Email_thuy = request.POST.get("Email")
+        Email_thuy = request.POST.get("Emailthuy")
         diadiem_thuy= request.POST.get("diadiemthuy")
         try:
             coso= Chicucthuy()
