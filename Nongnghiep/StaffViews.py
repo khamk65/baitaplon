@@ -145,13 +145,9 @@ def Luuthongtincosothuy(request):
         try:
             coso= Chicucthuy()
             coso.nguoidungdau =leader_thuy
-            print("1")
             coso.diadiem=diadiem_thuy
-            print("2")
             coso.Email=Email_thuy  
-            print("3")
             coso.save()
-            print("4")
             messages.success(request,"Nhập thông tin thành công")
             return HttpResponseRedirect(reverse("Addthongtincosothuy"))
         except:
@@ -179,10 +175,10 @@ def luusuathongtinchicucthuy(request):
             coso.Email=Email_thuy
             coso.save()
             messages.success(request,"Sửa thông tin thành công")
-            return HttpResponseRedirect(reverse("suathongtinchicucthuy"))
+            return HttpResponseRedirect(reverse("suathongtinchicucthuy",kwargs={"thuy_id": thuy_id}))
         except:
             messages.error(request,"Sửa thông tin thất bại")
-            return HttpResponseRedirect(reverse("suathongtinchicucthuy"))
+            return HttpResponseRedirect(reverse("suathongtinchicucthuy",kwargs={"thuy_id": thuy_id}))
 # đại lý bán thuốc
 def adddailybanthuoc(request):
     return render(request,"staff_template/adddailybanthuoc.html")
@@ -229,10 +225,10 @@ def luusuathongtindailybanthuoc(request):
             coso.Email=Email_thuoc
             coso.save()
             messages.success(request,"Sửa thông tin thành công")
-            return HttpResponseRedirect(reverse("suathongtindailybanthuoc"))
+            return HttpResponseRedirect(reverse("suathongtindailybanthuoc",kwargs={"thuoc_id": thuoc_id}))
         except:
             messages.error(request,"Sửa thông tin thất bại")
-            return HttpResponseRedirect(reverse("suathongtindailybanthuoc"))
+            return HttpResponseRedirect(reverse("suathongtindailybanthuoc",kwargs={"thuoc_id": thuoc_id}))
 
 
 
