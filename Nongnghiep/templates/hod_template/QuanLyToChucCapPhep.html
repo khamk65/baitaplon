@@ -1,6 +1,6 @@
-c{% extends 'staff_template/base_template.html' %}
+{% extends 'hod_template/base_template.html' %}
 {% block page_title %}
-Sửa thông tin chi cục thú y|  ID cơ sở : {{ thuy.id }}
+Quản lý tổ chức cấp phép
 {% endblock page_title %}
 {% block main_content %}
     <!-- Main content -->
@@ -11,27 +11,27 @@ Sửa thông tin chi cục thú y|  ID cơ sở : {{ thuy.id }}
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Sửa thông tin</h3>
+                <h3 class="card-title">Tổ chức cấp phép</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" action="{% url 'luusuathongtinchicucthuy' %}" method="post">
+              <form role="form" action="Luu_to_chuc_cap_phep" method="post">
                   {% csrf_token %}
-                <div class="form-group">
-                    <label>Người đứng đầu </label>
-                    <input type="text" class="form-control" name="nguoidungdaucosothuy" value="{{ coso.nguoidungdau}}">
-                    <input type="hidden"  name="thuy_id"  value="{{ coso.id }}">
-
-                  </div>
+                <div class="card-body">
                   <div class="form-group">
                     <label>Địa điểm</label>
-                    <input type="text" class="form-control" name="diadiemthuy" placeholder="điền địa điểm" value="{{ coso.diadiem}}">
+                    <input type="text" class="form-control" name="diadiem" placeholder="Tên loại cơ sở">
                   </div>
-                    <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" class="form-control" name="Emailthuy" placeholder="Điền email" value="{{coso.Email}}">
+
+                <div class="form-group">
+                    <label>Người quản lý</label>
+                    <select class="form-control" name="leader">
+                        {% for staff in staffs %}'
+                            <option value="{{ staff.id }}">{{staff.admin.last_name}} {{ staff.admin.first_name }}</option>
+                        {% endfor %}
+                    </select>
                   </div>
-                  
+
                    <div class="form-group">
                       {% if messages %}
                         {% for message in messages %}
@@ -49,7 +49,7 @@ Sửa thông tin chi cục thú y|  ID cơ sở : {{ thuy.id }}
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block">Lưu</button>
+                  <button type="submit" class="btn btn-primary btn-block">Thêm</button>
                 </div>
               </form>
             </div>

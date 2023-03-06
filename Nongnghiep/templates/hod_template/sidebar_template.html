@@ -53,122 +53,22 @@
                   </p>
                 </a>
               </li>
-<!--          <li class="nav-item">-->
-<!--              {% url 'add_student' as add_student %}-->
-{#<!--            <a href="{% url 'add_student' %}" class="nav-link {% if request.path == add_student %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Add Student-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--              {% url 'manage_student' as manage_student %}-->
-<!--              {% url 'edit_student' student_id=id as edit_student %}-->
-{#<!--            <a href="{% url 'manage_student' %}" class="nav-link {% if request.path == manage_student %} active {% endif %} {% if request.path == edit_student %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Manage Students-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-
-<!--          <li class="nav-item">-->
-<!--            {% url 'manage_subject' as manage_subject %}-->
-<!--            {% url 'edit_subject' subject_id=id as edit_subject %}-->
-{#<!--            <a href="{% url 'manage_subject' %}" class="nav-link {% if request.path == manage_subject %} active {% endif %} {% if request.path == edit_subject %} active {% endif %} ">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Manage Subject-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            {% url 'manage_session' as manage_session %}-->
-{#<!--            <a href="{% url 'manage_session' %}" class="nav-link {% if request.path == manage_session %} active {% endif %} ">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Manage Session Year-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--        <li class="nav-item">-->
-<!--            {% url 'manage_school_year' as manage_school_year %}-->
-{#<!--            <a href="{% url 'manage_school_year' %}" class="nav-link {% if request.path == manage_school_year %} active {% endif %} ">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Manage School Year-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-
-<!--           <li class="nav-item">-->
-<!--             {% url 'student_feedback_message' as student_feedback_message %}-->
-{#<!--            <a href="{% url 'student_feedback_message' %}" class="nav-link {% if request.path == student_feedback_message %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Student Feedback-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--           <li class="nav-item">-->
-<!--               {% url 'staff_feedback_message' as staff_feedback_message %}-->
-{#<!--            <a href="{% url 'staff_feedback_message' %}" class="nav-link {% if request.path == staff_feedback_message %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Staff Feedback-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--           <li class="nav-item">-->
-<!--               {% url 'student_leave_view' as student_leave_view %}-->
-{#<!--            <a href="{% url 'student_leave_view' %}" class="nav-link {% if request.path == student_leave_view %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Student Leave-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--            <li class="nav-item">-->
-<!--                 {% url 'staff_leave_view' as staff_leave_view %}-->
-{#<!--            <a href="{% url 'staff_leave_view' %}" class="nav-link {% if request.path == staff_leave_view %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Staff Leave-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            {% url 'admin_view_attendance' as admin_view_attendance %}-->
-{#<!--             <a href="{% url 'admin_view_attendance' %}" class="nav-link {% if request.path == admin_view_attendance %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                View Attendance-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            {% url 'admin_send_notification_staff' as admin_send_notification_staff %}-->
-{#<!--             <a href="{% url 'admin_send_notification_staff' %}" class="nav-link {% if request.path == admin_send_notification_staff %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Send Staff Notification-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            {% url 'admin_send_notification_student' as admin_send_notification_student %}-->
-{#<!--             <a href="{% url 'admin_send_notification_student' %}" class="nav-link {% if request.path == admin_send_notification_student %} active {% endif %}">-->#}
-<!--              <i class="nav-icon fas fa-th"></i>-->
-<!--              <p>-->
-<!--                Send Student Notification-->
-<!--              </p>-->
-<!--            </a>-->
-<!--          </li>-->
-
-<!--        </ul>-->
-<!--      </nav>-->
-<!--      &lt;!&ndash; /.sidebar-menu &ndash;&gt;-->
-<!--    </div>-->
-    <!-- /.sidebar -->
+            <li class="nav-item">
+            {% url 'Quan_ly_to_chuc_cap_phep' as Quan_ly_to_chuc_cap_phep %}
+            <a href="{% url 'Quan_ly_to_chuc_cap_phep' %}" class="nav-link {% if request.path == Quan_ly_to_chuc_cap_phep %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Tổ chức cấp phép
+              </p>
+            </a>
+          </li>
+        <li class="nav-item">
+            {% url 'Quan_ly_giay_phep' as Quan_ly_giay_phep %}
+            <a href="{% url 'Quan_ly_giay_phep' %}" class="nav-link {% if request.path == Quan_ly_giay_phep %} active {% endif %}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Quản lý giấy phép
+              </p>
+            </a>
+          </li>
   </aside>

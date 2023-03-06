@@ -32,7 +32,11 @@ urlpatterns = [
     path('manage_staff', AdminViews.manage_staff, name="manage_staff"),
     path('edit_staff/<str:staff_id>', AdminViews.edit_staff, name="edit_staff"),
     path('edit_staff_save', AdminViews.edit_staff_save, name="edit_staff_save"),
-    
+    path('Quan_ly_to_chuc_cap_phep', AdminViews.QuanLyToChucCapPhep, name="Quan_ly_to_chuc_cap_phep"),
+    path('Luu_to_chuc_cap_phep', AdminViews.LuuToChucCapPhep, name="Luu_to_chuc_cap_phep"),
+    path('Quan_ly_giay_phep', AdminViews.QuanLyGiayPhep, name="Quan_ly_giay_phep"),
+    path('Luu_giay_phep', AdminViews.LuuGiayPhep, name="Luu_giay_phep"),
+
     path('staff_home', StaffViews.staff_home, name="staff_home"),
     path('staff_profile', StaffViews.staff_profile, name="staff_profile"),
     path('staff_profile_save', StaffViews.staff_profile_save, name="staff_profile_save"),
@@ -43,9 +47,9 @@ urlpatterns = [
     path('Quan_ly_co_so', StaffViews.QuanLyCoSo, name="Quan_ly_co_so"),
     path('Sua_co_so/<str:coso_id>', StaffViews.Sua_co_so, name="Sua_co_so"),
     path('Luu_sua_co_so', StaffViews.Luu_sua_co_so, name="Luu_sua_co_so"),
-    # thêm path cơ sở thú y
     path('Addthongtincosothuy',StaffViews.Addthongtincosothuy, name="Addthongtincosothuy"),
     path('Luuthongtincosothuy',StaffViews.Luuthongtincosothuy, name="Luuthongtincosothuy"),
+
     path('Quanlychicucthuy', StaffViews.Quanlychicucthuy, name="Quanlychicucthuy"),
     path('suathongtinchicucthuy/<str:thuy_id>', StaffViews.suathongtinchicucthuy, name="suathongtinchicucthuy"),
     path('luusuathongtinchicucthuy', StaffViews.luusuathongtinchicucthuy, name="luusuathongtinchicucthuy"),
@@ -55,5 +59,11 @@ urlpatterns = [
     path('Quanlydailybanthuoc', StaffViews.Quanlydailybanthuoc, name="Quanlydailybanthuoc"),
     path('suathongtindailybanthuoc/<str:thuoc_id>', StaffViews.suathongtindailybanthuoc, name="suathongtindailybanthuoc"),
     path('luusuathongtindailybanthuoc', StaffViews.luusuathongtindailybanthuoc, name="luusuathongtindailybanthuoc"),
+
+    path('Them_vung_chan_nuoi', StaffViews.ThemVungChanNuoi, name="Them_vung_chan_nuoi"),
+    path('Luu_vung_chan_nuoi', StaffViews.LuuVungChanNuoi, name="Luu_vung_chan_nuoi"),
+    path('Quan_ly_vung_chan_nuoi', StaffViews.QuanLyVungChanNuoi, name="Quan_vung_chan_nuoi"),
+    path('Sua_vung_chan_nuoi/<str:vung_id>', StaffViews.SuaVungChanNuoi, name="Sua_vung_chan_nuoi"),
+    path('Luu_sua_vung_chan_nuoi', StaffViews.Luu_Sua_Vung_Chan_Chan_Nuoi, name="Luu_sua_vung_chan_nuoi"),
 
 ]
