@@ -49,6 +49,17 @@ urlpatterns = [
     path('Luu_sua_co_so', StaffViews.Luu_sua_co_so, name="Luu_sua_co_so"),
     path('Addthongtincosothuy',StaffViews.Addthongtincosothuy, name="Addthongtincosothuy"),
     path('Luuthongtincosothuy',StaffViews.Luuthongtincosothuy, name="Luuthongtincosothuy"),
+
+    path('Quanlychicucthuy', StaffViews.Quanlychicucthuy, name="Quanlychicucthuy"),
+    path('suathongtinchicucthuy/<str:thuy_id>', StaffViews.suathongtinchicucthuy, name="suathongtinchicucthuy"),
+    path('luusuathongtinchicucthuy', StaffViews.luusuathongtinchicucthuy, name="luusuathongtinchicucthuy"),
+
+    path('adddailybanthuoc',StaffViews.adddailybanthuoc, name="adddailybanthuoc"),
+    path('luuthongtindailybanthuoc',StaffViews.luuthongtindailybanthuoc, name="luuthongtindailybanthuoc"),
+    path('Quanlydailybanthuoc', StaffViews.Quanlydailybanthuoc, name="Quanlydailybanthuoc"),
+    path('suathongtindailybanthuoc/<str:thuoc_id>', StaffViews.suathongtindailybanthuoc, name="suathongtindailybanthuoc"),
+    path('luusuathongtindailybanthuoc', StaffViews.luusuathongtindailybanthuoc, name="luusuathongtindailybanthuoc"),
+
     path('Them_vung_chan_nuoi', StaffViews.ThemVungChanNuoi, name="Them_vung_chan_nuoi"),
     path('Luu_vung_chan_nuoi', StaffViews.LuuVungChanNuoi, name="Luu_vung_chan_nuoi"),
     path('Quan_ly_vung_chan_nuoi', StaffViews.QuanLyVungChanNuoi, name="Quan_vung_chan_nuoi"),

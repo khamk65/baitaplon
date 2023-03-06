@@ -78,7 +78,9 @@ class Chicucthuy(models.Model):
 
 class Dailybanthuoc(models.Model):
     id = models.AutoField(primary_key=True)
+    nguoidungdau=models.TextField()
     diadiem = models.TextField()
+    Email = models.TextField()
     loaisanpham = models.TextField()
     giayphep_id = models.ForeignKey(giayphep, on_delete=models.CASCADE)
     objects = models.Manager()

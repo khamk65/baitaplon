@@ -37,10 +37,10 @@ Quản lý chi cục thú y{% endblock page_title %}
                   <tbody>
                   {% for coso in cosos %}
                     <tr>
-                      <td>{{ coso.nguoidungdaucosothuy}}</td>
-                      <td>{{ coso.diadiemthuy}}</td>
-                        <td>{{ coso.Emailthuy}}</td>
-                      <td><a href="/suathongtinchicucthuy/{{ thuy.id }}" class="btn btn-success">Sửa</a></td>
+                      <td>{{ coso.nguoidungdau}}</td>
+                      <td>{{ coso.diadiem}}</td>
+                        <td>{{ coso.Email}}</td>
+                      <td><a href="/suathongtinchicucthuy/{{ coso.id }}" class="btn btn-success">Sửa</a></td>
                     </tr>
                   {% endfor %}
                   </tbody>
