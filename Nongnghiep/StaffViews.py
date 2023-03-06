@@ -202,10 +202,10 @@ def luuthongtindailybanthuoc(request):
             coso.save()
             print("4")
             messages.success(request,"Nhập thông tin thành công")
-            return HttpResponseRedirect(reverse("Addthongtincosothuy"))
+            return HttpResponseRedirect(reverse("adddailybanthuoc"))
         except:
             messages.error(request,"Nhập thông tin thất bại")
-            return HttpResponseRedirect(reverse("Addthongtincosothuy"))
+            return HttpResponseRedirect(reverse("adddailybanthuoc"))
 def Quanlydailybanthuoc(request):
     cosos=Dailybanthuoc.objects.all()
     return render(request,"staff_template/quanlydailybanthuoc.html",{"cosos":cosos})
@@ -216,6 +216,7 @@ def luusuathongtindailybanthuoc(request):
     if request.method!="POST":
         return HttpResponse("<h2>Method Not Allowed</h2>")
     else:
+        thuoc_id = request.POST.get("thuoc_id")
         leader_thuoc = request.POST.get("nguoidungdaudailybanthuoc")
         Email_thuoc = request.POST.get("Emaildailybanthuoc")
         diadiem_thuoc= request.POST.get("diadiemdailybanthuoc")
@@ -226,7 +227,7 @@ def luusuathongtindailybanthuoc(request):
             coso.Email=Email_thuoc
             coso.save()
             messages.success(request,"Sửa thông tin thành công")
-            return HttpResponseRedirect(reverse("suathongtinchicucthuy"))
+            return HttpResponseRedirect(reverse("suathongtindailybanthuoc"))
         except:
             messages.error(request,"Sửa thông tin thất bại")
-            return HttpResponseRedirect(reverse("suathongtinchicucthuy"))
+            return HttpResponseRedirect(reverse("suathongtindailybanthuoc"))
