@@ -8,11 +8,26 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
 
-from Nongnghiep.models import CustomUser, AdminHOD, Staffs, LoaiCoso, Coso, tochuccapphep, giayphep
+from Nongnghiep.models import CustomUser, AdminHOD, Staffs, LoaiCoso, Coso, tochuccapphep, giayphep, Vungchannuoi
 
 
 def admin_home(request):
-    return render(request, "hod_template/home_content.html")
+    staff_count = Staffs.objects.all().count()
+    Vungchannuoi_count = Vungchannuoi.objects.all().count()
+    tochuccapphep_count = tochuccapphep.objects.all().count()
+    giayphep_count = giayphep.objects.all().count()
+    context={
+        "staff_count": staff_count,
+        "Vungchannuoi_count": Vungchannuoi_count,
+        "tochuccapphep_count": tochuccapphep_count,
+        "giayphep_count": giayphep_count
+
+    }
+    return render(request, "hod_template/home_content.html", context)
+
+def QuanLyVungChanNuoi(request):
+    vungchannuoi = Vungchannuoi.objects.all()
+    return render(request,"hod_template/QuanLyVungChanNuoi.html",{"vungs": vungchannuoi})
 
 def admin_profile(request):
     user=CustomUser.objects.get(id=request.user.id)
@@ -60,6 +75,7 @@ def add_staff_save(request):
         except:
             messages.error(request,"Failed to Add Staff")
             return HttpResponseRedirect(reverse("add_staff"))
+
 
 @csrf_exempt
 def check_email_exist(request):

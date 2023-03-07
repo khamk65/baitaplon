@@ -36,6 +36,8 @@ urlpatterns = [
     path('Luu_to_chuc_cap_phep', AdminViews.LuuToChucCapPhep, name="Luu_to_chuc_cap_phep"),
     path('Quan_ly_giay_phep', AdminViews.QuanLyGiayPhep, name="Quan_ly_giay_phep"),
     path('Luu_giay_phep', AdminViews.LuuGiayPhep, name="Luu_giay_phep"),
+    path('Quan_ly_vung_chan_nuoi', AdminViews.QuanLyVungChanNuoi, name="Quan_vung_chan_nuoi_1"),
+
 
     path('staff_home', StaffViews.staff_home, name="staff_home"),
     path('staff_profile', StaffViews.staff_profile, name="staff_profile"),

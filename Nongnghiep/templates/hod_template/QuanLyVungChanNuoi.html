@@ -1,0 +1,72 @@
+{% extends 'hod_template/base_template.html' %}
+{% block page_title %}
+Quản lý vùng chăn nuôi
+{% endblock page_title %}
+{% block main_content %}
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+
+
+           <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin chi tiết</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Địa điểm</th>
+                        <th>Người quản lý</th>
+                        <th>Điều kiện chăn nuôi</th>
+                        <th>Tổ chức cấp phép</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for vung in vungs %}
+                    <tr>
+                        <td>{{ vung.id }}</td>
+                        <td>{{ vung.diadiem }}</td>
+                        <td>{{ vung.nguoiquanly.admin.last_name }} {{ vung.nguoiquanly.admin.first_name }}</td>
+                        <td>
+                            {% if vung.dieukienchannuoi == True %}
+                                Đủ điều kiện chăn nuôi
+                            {% endif %}
+                            {% if vung.dieukienchannuoi == False %}
+                                Không đủ điều kiện chăn nuôi
+                            {% endif %}
+                        </td>
+                        <td>{{ vung.giayphep_id.tochuccapphep_id.diadiem }} - {{ vung.giayphep_id.tochuccapphep_id.nguoidungdau.admin.last_name }} {{ vung.giayphep_id.tochuccapphep_id.nguoidungdau.admin.first_name }}</td>
+                        <td>{{ vung.giayphep_id.ngaybatdau}}</td>
+                        <td>{{ vung.giayphep_id.ngayhethan}}</td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock main_content %}
+
