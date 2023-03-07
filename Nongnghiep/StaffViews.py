@@ -192,13 +192,13 @@ def luuthongtindailybanthuoc(request):
         try:
             coso= Dailybanthuoc()
             coso.nguoidungdau =leader_thuoc
-            print("1")
+           
             coso.diadiem=diadiem_thuoc
-            print("2")
+            
             coso.Email=Email_thuoc 
-            print("3")
+            
             coso.save()
-            print("4")
+            
             messages.success(request,"Nhập thông tin thành công")
             return HttpResponseRedirect(reverse("adddailybanthuoc"))
         except:
