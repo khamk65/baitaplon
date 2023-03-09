@@ -2,7 +2,7 @@
 1. Installation Steps :
 - Clone this repository, you should use a virtual environment to store your Django project’s
 ```shell
-$ git clone 
+$ git clone https://github.com/khamk65/baitaplon.git
 $ cd quản lý cơ sỏ dũ liệu chăn nuôi
 ```
 - Install the Django code with Pip:
