@@ -2,8 +2,8 @@
 1. Installation Steps :
 - Clone this repository, you should use a virtual environment to store your Django project’s
 ```shell
-$ git clone https://github.com/Jackson2706/Primary_School_Management.git
-$ cd Primary_School_Management
+$ git clone 
+$ cd quản lý cơ sỏ dũ liệu chăn nuôi
 ```
 - Install the Django code with Pip:
 ```shell
